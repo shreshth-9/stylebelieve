@@ -9,7 +9,7 @@ const items = [
 
 export function Marquee() {
   return (
-    <div className="border-y border-border bg-ink py-3.5 text-primary-foreground">
+    <div className="overflow-hidden border-y border-border bg-ink py-3.5 text-primary-foreground">
       <div className="flex w-max animate-marquee">
         {[...items, ...items].map((t, i) => (
           <span key={i} className="flex items-center px-8 text-[11px] uppercase tracking-luxe">
