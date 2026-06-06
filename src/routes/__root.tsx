@@ -97,6 +97,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@stylebelieve" },
+      { name: "twitter:title", content: "STYLE BELIEVE — Wear Confidence. Believe in Style." },
+      { name: "description", content: "STYLE BELIEVE is a luxury fashion e-commerce platform offering a premium shopping experience." },
+      { property: "og:description", content: "STYLE BELIEVE is a luxury fashion e-commerce platform offering a premium shopping experience." },
+      { name: "twitter:description", content: "STYLE BELIEVE is a luxury fashion e-commerce platform offering a premium shopping experience." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5f34d2fd-ab2b-44d8-a855-4315907067e3/id-preview-edb67b31--a390936e-2177-4b71-8ca3-b5af1c38e562.lovable.app-1780732393813.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5f34d2fd-ab2b-44d8-a855-4315907067e3/id-preview-edb67b31--a390936e-2177-4b71-8ca3-b5af1c38e562.lovable.app-1780732393813.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
