@@ -166,7 +166,7 @@ function Shop() {
               <div className="flex items-center gap-3">
                 <select
                   value={sort}
-                  onChange={(e) => navigate({ search: (p) => ({ ...p, sort: e.target.value }) })}
+                  onChange={(e) => navigate({ search: (p: ShopSearch) => ({ ...p, sort: e.target.value }) })}
                   className="border border-border bg-background px-3 py-2 text-xs outline-none"
                 >
                   {SORTS.map((s) => (
