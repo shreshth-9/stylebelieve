@@ -189,7 +189,10 @@ export function Navbar() {
                 {["Hoodies", "Dresses", "Jackets", "Jeans"].map((t) => (
                   <button
                     key={t}
-                    onClick={() => navigate({ to: "/shop", search: { category: t } }) && setSearchOpen(false)}
+                    onClick={() => {
+                      navigate({ to: "/shop", search: { category: t } });
+                      setSearchOpen(false);
+                    }}
                     className="border border-border px-3 py-1.5 text-xs uppercase tracking-wide-luxe hover:bg-secondary"
                   >
                     {t}
