@@ -1,10 +1,54 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Facebook, Youtube } from "lucide-react";
 
-const cols = [
-  { title: "Shop", links: ["Men", "Women", "Accessories", "New Arrivals", "Sale"] },
-  { title: "Help", links: ["Shipping", "Returns", "Size Guide", "Track Order", "FAQ"] },
-  { title: "Company", links: ["About", "Sustainability", "Careers", "Press", "Contact"] },
+type ShopLink = { label: string; search: { gender?: string; category?: string; sort?: string } };
+type PageLink = {
+  label: string;
+  to:
+    | "/about"
+    | "/contact"
+    | "/shipping"
+    | "/returns"
+    | "/size-guide"
+    | "/track-order"
+    | "/faq"
+    | "/sustainability"
+    | "/careers"
+    | "/press";
+};
+type FooterLink = ShopLink | PageLink;
+
+const cols: { title: string; links: FooterLink[] }[] = [
+  {
+    title: "Shop",
+    links: [
+      { label: "Men", search: { gender: "Men" } },
+      { label: "Women", search: { gender: "Women" } },
+      { label: "Accessories", search: { category: "Accessories" } },
+      { label: "New Arrivals", search: { sort: "newest" } },
+      { label: "Sale", search: { sort: "price-asc" } },
+    ],
+  },
+  {
+    title: "Help",
+    links: [
+      { label: "Shipping", to: "/shipping" },
+      { label: "Returns", to: "/returns" },
+      { label: "Size Guide", to: "/size-guide" },
+      { label: "Track Order", to: "/track-order" },
+      { label: "FAQ", to: "/faq" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About", to: "/about" },
+      { label: "Sustainability", to: "/sustainability" },
+      { label: "Careers", to: "/careers" },
+      { label: "Press", to: "/press" },
+      { label: "Contact", to: "/contact" },
+    ],
+  },
 ];
 
 export function Footer() {
@@ -38,13 +82,23 @@ export function Footer() {
                 </p>
                 <ul className="mt-4 space-y-2.5">
                   {col.links.map((l) => (
-                    <li key={l}>
-                      <Link
-                        to="/shop"
-                        className="text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
-                      >
-                        {l}
-                      </Link>
+                    <li key={l.label}>
+                      {"search" in l ? (
+                        <Link
+                          to="/shop"
+                          search={l.search}
+                          className="text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
+                        >
+                          {l.label}
+                        </Link>
+                      ) : (
+                        <Link
+                          to={l.to}
+                          className="text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
+                        >
+                          {l.label}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
