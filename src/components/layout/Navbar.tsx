@@ -68,8 +68,10 @@ export function Navbar() {
           </button>
           <nav className="hidden items-center gap-7 lg:flex">
             {Object.keys(megaData).map((m) => (
-              <button
+              <Link
                 key={m}
+                to="/shop"
+                search={m === "Accessories" ? { category: "Accessories" } : { gender: m }}
                 onMouseEnter={() => setMega(m)}
                 className={cn(
                   "text-[12px] uppercase tracking-wide-luxe transition-colors hover:opacity-60",
@@ -77,7 +79,7 @@ export function Navbar() {
                 )}
               >
                 {m}
-              </button>
+              </Link>
             ))}
             <Link
               to="/shop"
@@ -141,7 +143,7 @@ export function Navbar() {
                   <Link
                     key={c}
                     to="/shop"
-                    search={{ category: c }}
+                    search={mega === "Accessories" ? { category: c } : { gender: mega, category: c }}
                     className="text-sm text-foreground transition-colors hover:text-accent-foreground hover:underline"
                   >
                     {c}
@@ -231,13 +233,19 @@ export function Navbar() {
               <div className="mt-8 space-y-6">
                 {Object.entries(megaData).map(([group, items]) => (
                   <div key={group}>
-                    <p className="font-serif text-xl italic">{group}</p>
+                    <Link
+                      to="/shop"
+                      search={group === "Accessories" ? { category: "Accessories" } : { gender: group }}
+                      className="font-serif text-xl italic"
+                    >
+                      {group}
+                    </Link>
                     <div className="mt-2 flex flex-col gap-1.5 pl-1">
                       {items.map((c) => (
                         <Link
                           key={c}
                           to="/shop"
-                          search={{ category: c }}
+                          search={group === "Accessories" ? { category: c } : { gender: group, category: c }}
                           className="text-sm text-muted-foreground"
                         >
                           {c}
