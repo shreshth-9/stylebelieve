@@ -153,7 +153,7 @@ function ProductPage() {
           <div className="mt-7">
             <p className="text-[11px] uppercase tracking-wide-luxe">Color · {color}</p>
             <div className="mt-2.5 flex gap-2.5">
-              {product.colors.map((c) => (
+              {product.colors.map((c: { name: string; hex: string }) => (
                 <button
                   key={c.name}
                   onClick={() => setColor(c.name)}
@@ -177,7 +177,7 @@ function ProductPage() {
               </button>
             </div>
             <div className="mt-2.5 flex flex-wrap gap-2">
-              {product.sizes.map((s) => (
+              {product.sizes.map((s: string) => (
                 <button
                   key={s}
                   onClick={() => setSize(s)}
