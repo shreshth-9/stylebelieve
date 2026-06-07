@@ -146,7 +146,7 @@ function Shop() {
       <div className="border-b border-border bg-cream px-5 py-12 lg:px-10">
         <div className="mx-auto max-w-[1500px]">
           <p className="text-[11px] uppercase tracking-luxe text-muted-foreground">
-            {search.gender ?? search.q ? `Results` : "Collection"}
+            {search.q ? "Results" : "Collection"}
           </p>
           <h1 className="mt-2 font-display text-4xl md:text-5xl">
             {search.q ? `“${search.q}”` : search.gender ? `${search.gender}` : "Shop All"}
