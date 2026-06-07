@@ -26,9 +26,11 @@ export function WhyChoose() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-              className="group bg-background p-8 transition-colors hover:bg-cream"
+              className="group bg-background p-8 transition-colors duration-500 hover:bg-cream"
             >
-              <f.icon className="h-7 w-7 stroke-1 text-foreground transition-transform group-hover:scale-110" />
+              <div className="grid h-12 w-12 place-items-center border border-border bg-secondary transition-colors duration-500 group-hover:border-foreground group-hover:bg-ink">
+                <f.icon className="h-6 w-6 stroke-1 text-foreground transition-colors duration-500 group-hover:text-primary-foreground" />
+              </div>
               <h3 className="mt-4 text-lg font-medium tracking-tight">{f.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{f.desc}</p>
             </motion.div>

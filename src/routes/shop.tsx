@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { SlidersHorizontal, LayoutGrid, List, X } from "lucide-react";
@@ -50,6 +50,12 @@ function Shop() {
   const [selSizes, setSelSizes] = useState<string[]>([]);
   const [maxPrice, setMaxPrice] = useState(260);
   const sort = search.sort ?? "popular";
+
+  // Keep the category filter in sync when navigating between category links
+  // while already on the shop page (e.g. via the navbar mega menu).
+  useEffect(() => {
+    setSelCats(search.category ? [search.category] : []);
+  }, [search.category]);
 
   const toggle = (arr: string[], set: (v: string[]) => void, val: string) =>
     set(arr.includes(val) ? arr.filter((a) => a !== val) : [...arr, val]);
@@ -140,7 +146,7 @@ function Shop() {
       <div className="border-b border-border bg-cream px-5 py-12 lg:px-10">
         <div className="mx-auto max-w-[1500px]">
           <p className="text-[11px] uppercase tracking-luxe text-muted-foreground">
-            {search.gender ?? search.q ? `Results` : "Collection"}
+            {search.q ? "Results" : "Collection"}
           </p>
           <h1 className="mt-2 font-display text-4xl md:text-5xl">
             {search.q ? `“${search.q}”` : search.gender ? `${search.gender}` : "Shop All"}

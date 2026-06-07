@@ -31,7 +31,9 @@ export function Trending() {
             key={t}
             onClick={() => setTab(t)}
             className={`px-4 py-2 text-[11px] uppercase tracking-wide-luxe transition-colors ${
-              tab === t ? "bg-ink text-primary-foreground" : "border border-border hover:bg-secondary"
+              tab === t
+                ? "bg-ink text-primary-foreground"
+                : "border border-border hover:border-foreground hover:bg-secondary"
             }`}
           >
             {t}
