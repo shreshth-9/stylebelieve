@@ -69,7 +69,7 @@ export function Navbar() {
               <Link
                 key={m}
                 to="/shop"
-                search={m === "Accessories" ? { category: "Accessories" } : { gender: m }}
+                search={{ gender: m }}
                 onMouseEnter={() => setMega(m)}
                 className={cn(
                   "text-[12px] uppercase tracking-wide-luxe transition-colors hover:opacity-60",
@@ -141,7 +141,7 @@ export function Navbar() {
                   <Link
                     key={c}
                     to="/shop"
-                    search={mega === "Accessories" ? { category: c } : { gender: mega, category: c }}
+                    search={{ gender: mega, category: c }}
                     className="text-sm text-foreground transition-colors hover:text-accent-foreground hover:underline"
                   >
                     {c}
@@ -233,7 +233,7 @@ export function Navbar() {
                   <div key={group}>
                     <Link
                       to="/shop"
-                      search={group === "Accessories" ? { category: "Accessories" } : { gender: group }}
+                      search={{ gender: group }}
                       className="font-serif text-xl italic"
                     >
                       {group}
@@ -243,7 +243,7 @@ export function Navbar() {
                         <Link
                           key={c}
                           to="/shop"
-                          search={group === "Accessories" ? { category: c } : { gender: group, category: c }}
+                          search={{ gender: group, category: c }}
                           className="text-sm text-muted-foreground"
                         >
                           {c}
