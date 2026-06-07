@@ -60,13 +60,13 @@ export function Hero() {
           <Link
             to="/shop"
             search={{ sort: "newest" }}
-            className="bg-cream px-9 py-4 text-[11px] uppercase tracking-wide-luxe text-ink transition-transform hover:scale-[1.03]"
+            className="bg-cream px-9 py-4 text-[11px] uppercase tracking-wide-luxe text-ink shadow-luxe transition-transform duration-300 hover:scale-[1.03]"
           >
             Shop New Arrivals
           </Link>
           <Link
             to="/shop"
-            className="glass-dark px-9 py-4 text-[11px] uppercase tracking-wide-luxe text-primary-foreground transition-transform hover:scale-[1.03]"
+            className="glass-dark px-9 py-4 text-[11px] uppercase tracking-wide-luxe text-primary-foreground transition-transform duration-300 hover:scale-[1.03]"
           >
             Explore Collections
           </Link>
