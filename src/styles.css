@@ -159,11 +159,17 @@
     border-color: var(--color-border);
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
 
@@ -177,6 +183,23 @@
     background: var(--ink);
     color: var(--cream);
   }
+
+  /* Premium slim scrollbar */
+  ::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in oklab, var(--ink) 28%, transparent);
+    border: 2px solid var(--background);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in oklab, var(--ink) 50%, transparent);
+  }
 }
 
 @layer utilities {
@@ -184,6 +207,8 @@
   .font-serif { font-family: var(--font-serif); }
   .tracking-luxe { letter-spacing: 0.28em; }
   .tracking-wide-luxe { letter-spacing: 0.18em; }
+  .shadow-luxe { box-shadow: var(--shadow-luxe); }
+  .shadow-card { box-shadow: var(--shadow-card); }
   .glass {
     background: oklch(1 0 0 / 0.6);
     backdrop-filter: blur(20px) saturate(140%);
