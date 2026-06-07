@@ -2,17 +2,10 @@ import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import men from "@/assets/category-men.jpg";
 import women from "@/assets/category-women.jpg";
-import accessories from "@/assets/category-accessories.jpg";
 
 const collections = [
   { title: "Men", subtitle: "Tailored & Street", image: men, search: { gender: "Men" } },
   { title: "Women", subtitle: "Effortless Elegance", image: women, search: { gender: "Women" } },
-  {
-    title: "Accessories",
-    subtitle: "Finishing Touches",
-    image: accessories,
-    search: { category: "Accessories" },
-  },
 ];
 
 export function FeaturedCollections() {
@@ -31,7 +24,7 @@ export function FeaturedCollections() {
         </Link>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-2">
         {collections.map((c, i) => (
           <motion.div
             key={c.title}
