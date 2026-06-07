@@ -17,9 +17,9 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, delay: (index % 4) * 0.08, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative"
+      className="group relative transition-transform duration-500 ease-out hover:-translate-y-1"
     >
-      <div className="relative aspect-[3/4] overflow-hidden bg-secondary">
+      <div className="relative aspect-[3/4] overflow-hidden bg-secondary transition-shadow duration-500 ease-out group-hover:shadow-luxe">
         <Link to="/product/$id" params={{ id: product.id }} aria-label={product.name}>
           <img
             src={product.image}
@@ -37,7 +37,7 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
         </Link>
 
         {product.badge && (
-          <span className="absolute left-3 top-3 bg-ink px-2.5 py-1 text-[10px] uppercase tracking-wide-luxe text-primary-foreground">
+          <span className="absolute left-3 top-3 bg-ink/90 px-2.5 py-1 text-[10px] uppercase tracking-wide-luxe text-primary-foreground backdrop-blur-sm">
             {product.badge}
           </span>
         )}
