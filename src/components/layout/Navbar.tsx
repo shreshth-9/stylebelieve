@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 
 const MENS = ["T-Shirts", "Shirts", "Hoodies", "Jackets", "Jeans"];
 const WOMENS = ["Dresses", "Tops", "Hoodies", "Jackets", "Activewear"];
-const ACCESSORIES = ["Bags", "Caps", "Sunglasses", "Watches"];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
