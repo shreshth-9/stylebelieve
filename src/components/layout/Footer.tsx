@@ -24,7 +24,6 @@ const cols: { title: string; links: FooterLink[] }[] = [
     links: [
       { label: "Men", search: { gender: "Men" } },
       { label: "Women", search: { gender: "Women" } },
-      { label: "Accessories", search: { category: "Accessories" } },
       { label: "New Arrivals", search: { sort: "newest" } },
       { label: "Sale", search: { sort: "price-asc" } },
     ],
