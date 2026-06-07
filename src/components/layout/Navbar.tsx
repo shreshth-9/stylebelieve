@@ -45,7 +45,6 @@ export function Navbar() {
   const megaData: Record<string, string[]> = {
     Men: MENS,
     Women: WOMENS,
-    Accessories: ACCESSORIES,
   };
 
   return (
